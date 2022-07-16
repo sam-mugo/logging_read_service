@@ -27,9 +27,6 @@ public class BankAdminLogsService {
         return bankAdminLogsRepo.save(bankAdminLogs);
     }
 
-    public List<BankAdminLogs> findlogs() {
-        return bankAdminLogsRepo.findAll();
-    }
 
     /*
      * Retrieves all BankAdminLogs

@@ -21,10 +21,6 @@ public class CorporateAdminLogsService {
     }
 
 
-
-    public List<CorporateAdminLogs> findlogs() {
-        return corporateAdminLogsRepo.findAll();
-    }
     /*
      * Retrieves all CorporateAdminLogs
      * with a page size limit
