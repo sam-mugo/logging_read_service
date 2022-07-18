@@ -1,6 +1,7 @@
 package logging_service.service;
 
 
+import logging_service.domain.BankAdminLogs;
 import logging_service.domain.CorporateAdminLogs;
 import logging_service.repo.CorporateAdminLogsRepo;
 import org.springframework.data.domain.Page;
@@ -20,6 +21,13 @@ public class CorporateAdminLogsService {
         this.corporateAdminLogsRepo = corporateAdminLogsRepo;
     }
 
+
+    /*
+    * Saves a log to the db Table
+    * */
+    public CorporateAdminLogs saveLog(CorporateAdminLogs corporateAdminLogs) {
+        return corporateAdminLogsRepo.save(corporateAdminLogs);
+    }
 
     /*
      * Retrieves all CorporateAdminLogs
