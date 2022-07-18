@@ -1,10 +1,12 @@
 package logging_service.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 
@@ -27,7 +29,9 @@ public class AuditLogs {
 
 
     @CreatedDate
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(nullable = false, updatable = false)
-    private OffsetDateTime dateCreated;
+    private LocalDate dateCreated;
+
 
 }

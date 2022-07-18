@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.OffsetTime;
 import java.util.List;
 
@@ -45,8 +46,8 @@ public class CorporateAdminLogsService {
      * */
     public Page<CorporateAdminLogs> findAllLogsBetweenDates(Integer pageNo,
                                                             Integer pageSize,
-                                                            OffsetTime startDate,
-                                                            OffsetTime endDate) {
+                                                            LocalDate startDate,
+                                                            LocalDate endDate) {
         Pageable paging  = PageRequest.of(pageNo, pageSize);
         return (Page<CorporateAdminLogs>) corporateAdminLogsRepo.findByDateCreatedBetween(startDate, endDate, paging);
     }
@@ -64,8 +65,8 @@ public class CorporateAdminLogsService {
      * Retrieves paged results of all logs by userId between a range of dates
      * */
     public Page<CorporateAdminLogs> findLogsByUSerIdBetweenDates(final Long userId,
-                                                            OffsetTime startDate,
-                                                            OffsetTime endDate,
+                                                                 LocalDate startDate,
+                                                                 LocalDate endDate,
                                                             Integer pageNo, Integer pageSize) {
         Pageable paging = PageRequest.of(pageNo, pageSize);
         return (Page<CorporateAdminLogs>) corporateAdminLogsRepo.findByUserIdAndDateCreatedBetween(userId, startDate,endDate, paging);
