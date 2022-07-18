@@ -55,7 +55,7 @@ public class BankAdminLogsApi {
     /*
     * Retrieve all paginated logs by a userId between a range of dates
     * */
-    @RequestMapping(value = "/{userId}/{startDate}{endDate}{pageNo}{pageSize}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{userId}/{startDate}/{endDate}/{pageNo}/{pageSize}", method = RequestMethod.GET)
     public Page<BankAdminLogs> bankAdminLogsByUserIdInRangeOfDates(@PathVariable Long userId,
                                                                    OffsetTime startDate,
                                                                    OffsetTime endDate, Integer pageNo,
